@@ -20,7 +20,6 @@
                 $.ajax({
                     crossDomain: true,
                     url: 'https://c7m17o0qpj.execute-api.us-west-2.amazonaws.com/Dev/getcustomerdetailsbyemail',
-                    headers: {'Access-Control-Allow-Origin': '*'},
                     cache: false,
                     type: 'GET',                   
                     data: { "EmailID": self.searchKey() },
