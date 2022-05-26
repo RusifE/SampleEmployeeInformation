@@ -1,66 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Getting User Information Based on Email ID: </title>
+    <title> Employee Data </title>
     <meta charset="utf-8" />
     <script src="jquery-3.1.1.min.js"></script>
     <script src="knockout-3.4.2.js"></script> 
     <link rel="stylesheet" type="text/css" href="index.css"/>
     <script type="text/javascript" src=index.js></script>
-
 </head>
+
 <body>
     <div class="container" id="container">
 
+        <!-- Get Employee Information -->
         <div class="form-container sign-in-container">
             <form action="#">
                 <h1>Search with Email</h1>
                 <input type="email" placeholder="Email" id="txtSearchKey" data-bind="value : searchKey"/>
-                <button value="GetCustomerDetails" data-bind="click: $root.getCustomerDetails()">Get Customer Details</button>
+                <button >Sign In</button>
                 <br />
-    <table id="CustomerDetails">
-        <thead>
-            <tr>
-                <td>First Name:</td>
-                <td><label id="firstName" data-bind="text: firstName"/></td>
-            </tr>
+                <table id="CustomerDetails">
+                    <thead>
+                        <tr>
+                            <td>First Name:</td>
+                            <td><label id="firstName" data-bind="text: firstName"/></td>
+                        </tr>
 
-            <tr>
-                <td>Last Name:</td>
-                <td><label id="lastName" data-bind="text: lastName"/></td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td><label id="emailId" data-bind="text: emailId"/></td>
-            </tr>
-          
-        </thead>
-      
-    </table>
-    <br />
-            </form>
-            
+                        <tr>
+                            <td>Last Name:</td>
+                            <td><label id="lastName" data-bind="text: lastName"/></td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td><label id="emailId" data-bind="text: emailId"/></td>
+                        </tr>
+                    </thead>
+                </table>
+                <br />
+            </form> 
         </div>
-            <div class="form-container sign-up-container">
+
+        <!-- Create Employee -->
+        <div class="form-container sign-up-container">
             <form action="#">
                 <h1>Create New Employee</h1>
                 <input type="email" placeholder="Email" data-bind='value: EmailID'/>
                 <input type="text" placeholder="First Name" data-bind='value: FirstName'/>
                 <input type="text" placeholder="Last Name" data-bind='value: LastName'/>
-                <button data-bind="click: $root.SaveCustomerDetails">Save Employee</button>
+                <button>Sign Up</button>
             </form>
         </div>
+
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-right">
                     <h1>Hello, User!</h1>
                     <p>Enter your personal details to save it in the DB! </p>
-                    <button class="ghost" id="signUp">Create Employee</button>
+                    <button class="ghost" id="signUp">Sign Up</button>
                 </div>
                 <div class="overlay-panel overlay-left">
                     <h1>Already Added the User?</h1>
                     <p>To see the employee's information, click below!</p>
-                    <button class="ghost" id="signIn">Get Information</button>
+                    <button class="ghost" id="signIn">Sign In</button>
                 </div>
             </div>
         </div>
