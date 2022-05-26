@@ -5,14 +5,9 @@
     <meta charset="utf-8" />
     <script src="jquery-3.1.1.min.js"></script>
     <script src="knockout-3.4.2.js"></script> 
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script src=index.js></script>
     <script type="text/javascript">
-        document.getElementById('signUp').addEventListener('click', () => {
-            document.getElementById('container').classList.add("right-panel-active");
-        });
-
-        document.getElementById('signIn').addEventListener('click', () => {
-            document.getElementById('container').classList.remove("right-panel-active");
-        });
 
         $(document).ready(function() { 
             var customerViewModel = function() {
@@ -85,7 +80,6 @@
     </script>
 </head>
 <body>
-    <link rel="stylesheet" href="index.css">
     <div class="container" id="container">
 
         <div class="form-container sign-in-container">
