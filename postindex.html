@@ -8,23 +8,19 @@
     <script type="text/javascript">
         		
         $(document).ready(function() {
-
             var customerDetailsViewModel = function() {
             var self = this;
-			
+
 			self.EmailID = ko.observable("");
             self.FirstName = ko.observable("");
             self.LastName = ko.observable("");
             self.SuccessMessage = ko.observable("");
 			
-            self.SaveCustomerDetails = function () {              
-                
+            self.SaveCustomerDetails = function () {     
 				var CustomerDetail = {
-				
-				EmailID: self.EmailID(),
-				FirstName: self.FirstName(),
-				LastName: self.LastName()
-				
+					EmailID: self.EmailID(),
+					FirstName: self.FirstName(),
+					LastName: self.LastName()
 				}
 				
 				$.ajax({
@@ -39,7 +35,6 @@
 							self.EmailID('');
 							self.FirstName('');
 							self.LastName('');
-							
                     }
 					}).fail(
 					    function(xhr, textStatus, err){
@@ -60,38 +55,36 @@
         <tr>
             <td>
 				<div>
-				<p>
-					EmailID:
-					<input data-bind='value: EmailID' />
-					
-					</p>
-					
 					<p>
-					
+						EmailID:
+						<input data-bind='value: EmailID' />
+						
+					</p>
+						
+					<p>
 						FirstName:
 						<input data-bind='value: FirstName' />
-						</p>
-						<p>
+					</p>
+					<p>
 						LastName:
 						<input data-bind='value: LastName' />
-						</p>
+					</p>
+				</div>
 						
-						</div>
-						
-					<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
+				<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
 					
-				</td>
-				</tr>
-				<tr>
-					<td>
-						<div>
-								<button data-bind="click: $root.SaveCustomerDetails" > Save </button>
-								<td><a href="getindex.html"> <input type="submit" value="Get Employee Information"></a></td>
-							</div>
-						</td>
-					</tr>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div>
+					<button data-bind="click: $root.SaveCustomerDetails" > Save </button>
+					<td><a href="getindex.html"> <input type="submit" value="Get Employee Information"></a></td>
+				</div>
+			</td>
+		</tr>
 					
-				</table>
+	</table>
 				
-				</body>
-				</html>
+	</body>
+</html>

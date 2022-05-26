@@ -7,31 +7,30 @@
     <script src="knockout-3.4.2.js"></script> 
     <script type="text/javascript">
         
-
         $(document).ready(function() { 
             var customerViewModel = function() {
-            var self = this;
-            self.firstName = ko.observable("");
-            self.lastName = ko.observable("");
-            self.emailId = ko.observable("");
-            self.searchKey = ko.observable("");
+                var self = this;
 
-            self.getCustomerDetails = function () {              
-                $.ajax({
-                    crossDomain: true,
-                    url: 'https://c7m17o0qpj.execute-api.us-west-2.amazonaws.com/Dev/getcustomerdetailsbyemail',
-                    cache: false,
-                    type: 'GET',                   
-                    data: { "EmailID": self.searchKey() },
-                    success: function (data) {              
-                        self.firstName(data.Item.FirstName)
-                        self.lastName(data.Item.LastName),
-                        self.emailId(data.Item.EmailID)
-                    }
-                });
+                self.firstName = ko.observable("");
+                self.lastName = ko.observable("");
+                self.emailId = ko.observable("");
+                self.searchKey = ko.observable("");
+
+                self.getCustomerDetails = function () {      
+                    $.ajax({
+                        crossDomain: true,
+                        url: 'https://c7m17o0qpj.execute-api.us-west-2.amazonaws.com/Dev/getcustomerdetailsbyemail',
+                        cache: false,
+                        type: 'GET',                   
+                        data: { "EmailID": self.searchKey() },
+                        success: function (data) {              
+                            self.firstName(data.Item.FirstName)
+                            self.lastName(data.Item.LastName),
+                            self.emailId(data.Item.EmailID)
+                        }
+                    });
+                }
             }
-        }
-
             var viewModel = new customerViewModel();
             ko.applyBindings(viewModel);
          });
@@ -48,7 +47,6 @@
     </table>
 
     <br />
-  
     <table id="CustomerDetails">
         <thead>
             <tr>
@@ -67,8 +65,7 @@
           
         </thead>
       
-        </table>
-
+    </table>
     <br />
   
   <table>
