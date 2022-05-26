@@ -87,7 +87,27 @@
                 <h1>Search with Email</h1>
                 <input type="email" placeholder="Email" id="txtSearchKey" data-bind="value : searchKey"/>
                 <button value="GetCustomerDetails" data-bind="click: $root.getCustomerDetails()">Get Customer Details</button>
-                <output data-bind="text: firstName"> First Name: </output>
+                <br />
+    <table id="CustomerDetails">
+        <thead>
+            <tr>
+                <td>First Name:</td>
+                <td><label id="firstName" data-bind="text: firstName"/></td>
+            </tr>
+
+            <tr>
+                <td>Last Name:</td>
+                <td><label id="lastName" data-bind="text: lastName"/></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><label id="emailId" data-bind="text: emailId"/></td>
+            </tr>
+          
+        </thead>
+      
+    </table>
+    <br />
             </form>
             
         </div>
