@@ -34,7 +34,46 @@
             var viewModel = new customerViewModel();
             ko.applyBindings(viewModel);
          });
+        
+         $(document).ready(function() {
+            var customerDetailsViewModel = function() {
+            var self = this;
 
+			self.EmailID = ko.observable("");
+            self.FirstName = ko.observable("");
+            self.LastName = ko.observable("");
+            self.SuccessMessage = ko.observable("");
+			
+            self.SaveCustomerDetails = function () {     
+				var CustomerDetail = {
+					EmailID: self.EmailID(),
+					FirstName: self.FirstName(),
+					LastName: self.LastName()
+				}
+				
+				$.ajax({
+					crossDomain: true,
+                    url: 'https://w5fr5lidcd.execute-api.us-west-2.amazonaws.com/dev/postcustomerdetails',
+                    cache: false,
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8', 
+                    data: ko.toJSON(CustomerDetail),
+                    success: function (data) {              
+                        self.SuccessMessage(data)
+							self.EmailID('');
+							self.FirstName('');
+							self.LastName('');
+                    }
+					}).fail(
+					    function(xhr, textStatus, err){
+					        alert("Error happened "+err);
+                        });
+            };
+            }
+
+            var viewModel = new customerDetailsViewModel();
+            ko.applyBindings(viewModel);
+         });
        
     </script>
 </head>

@@ -1,5 +1,4 @@
 var AWS = require("aws-sdk");
-
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = (event, context, callback) => {
@@ -21,12 +20,3 @@ exports.handler = (event, context, callback) => {
         }
     })
 };
-
-// exports.handler = async (event) => {
-//     // TODO implement
-//     const response = {
-//         statusCode: 200,
-//         body: JSON.stringify('Hello from Lambda!'),
-//     };
-//     return response;
-// };

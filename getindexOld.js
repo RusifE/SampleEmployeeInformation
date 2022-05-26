@@ -17,15 +17,3 @@ exports.handler = (event, context, callback) => {
      callback(err, data);   
     })
 };
-
-// exports.handler = async (event) => {
-// // exports.handler = (event, context, callback) => {
-//      // // TODO implement
-//     const response = {
-//         statusCode: 200,
-//         body: JSON.stringify('Hello from Lambda!'),
-//     };
-//     return response;
-//     // callback(null, '{"FirstName": "Rusif", "LastName": "Eyvazli", "Email": "rusif.eyvazli@lcginc.com"}');
-    
-// };
