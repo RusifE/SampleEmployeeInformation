@@ -77,13 +77,13 @@ button::after {
 	transition: all 0.3s ease-in-out;
 }
 
-button.style-3::after {
+button.style::after {
 	border: 0.1;
 	/* box-shadow: 0px 0px 0px 2px white; */
 	top: 0.3rem;
 	left: 0.3rem;
 }
-button.style-3:hover::after {
+button.style:hover::after {
 	top: -0.3rem;
 	left: -0.3rem;
 	width: calc(100% + 0.3rem * 2);

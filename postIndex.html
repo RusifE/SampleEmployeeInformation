@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="knockout-3.4.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script type="text/javascript" src=index.js></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+				<div>
+					<p>
+						EmailID:
+						<input data-bind='value: EmailID' />
+						
+					</p>
+						
+					<p>
+						FirstName:
+						<input data-bind='value: FirstName' />
+					</p>
+					<p>
+						LastName:
+						<input data-bind='value: LastName' />
+					</p>
+				</div>
+						
+				<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
+					
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div>
+					<button data-bind="click: $root.SaveCustomerDetails" > Save </button>
+					<td><a href="getindex.html"> <input type="submit" value="Get Employee Information"></a></td>
+				</div>
+			</td>
+		</tr>
+					
+	</table>
+				
+	</body>
+</html>
