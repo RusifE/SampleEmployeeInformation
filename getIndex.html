@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="" id="container">
+    <div class="container" id="container">
 
          <!-- Get Employee Information -->
         <div class="form-container sign-in-container">
@@ -39,33 +39,6 @@
                 <br />
             </form>
         </div>
-
-        <!-- Create Employee -->
-        <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Create New Employee</h1>
-                <input type="email" placeholder="Email" data-bind='value: EmailID'/>
-                <input type="text" placeholder="First Name" data-bind='value: FirstName'/>
-                <input type="text" placeholder="Last Name" data-bind='value: LastName'/>
-                <button data-bind="click: $root.SaveCustomerDetails">Save Employee</button>
-            </form>
-        </div>
-        
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, User!</h1>
-                    <p>Enter your personal details to save it in the DB! </p>
-                    <button class="ghost" id="signUp">Create Employee</button>
-                </div>
-                <div class="overlay-panel overlay-left">
-                    <h1>Already Added the User?</h1>
-                    <p>To see the employee's information, click below!</p>
-                    <button class="ghost" id="signIn">Get Information</button>
-                </div>
-            </div>
-        </div>
-
     </div>
 
 </body>
