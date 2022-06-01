@@ -42,6 +42,23 @@ a {
 	margin: 15px 0;
 }
 
+a {
+	background: linear-gradient(45deg, #51a2ff, #b97fe0);
+	color: #FFFFFF;
+	font-size: 12px;
+	padding: 12px 20px;
+	margin-top: 7px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+	border: solid 1px;
+	outline: 0;
+	letter-spacing: 0.08rem;
+	border-radius: 0.05rem;
+	position: relative;
+	cursor: pointer;
+}
+
 button {
 	background: linear-gradient(45deg, #51a2ff, #b97fe0);
 	color: #FFFFFF;
@@ -62,6 +79,7 @@ button {
 button:active {
 	transform: scale(0.95);
 }
+
 
 button::after {
 	content: '';
@@ -90,48 +108,102 @@ button.style:hover::after {
 	height: calc(100% + 0.3rem * 2);
 }
 
-span{
-	position: relative;
-	display: inline-flex;
-	width: 180px;
-	height: 55px;
-	margin: 0 15px;
-	perspective: 1000px;
-  }
-  span a{
-	font-size: 19px;
-	letter-spacing: 1px;
-	transform-style: preserve-3d;
-	transform: translateZ(-25px);
-	transition: transform .25s;
-	font-family: 'Montserrat', sans-serif;
-	
-  }
-  span a:before,
-  span a:after{
+a:active {
+	transform: scale(0.95);
+}
+
+
+a::after {
+	content: '';
 	position: absolute;
-	content: "BUTTON";
-	height: 55px;
-	width: 180px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 5px solid black;
-	box-sizing: border-box;
-	border-radius: 5px;
-  }
-  span a:before{
-	color: #fff;
-	background: #000;
-	transform: rotateY(0deg) translateZ(25px);
-  }
-  span a:after{
-	color: #000;
-	transform: rotateX(90deg) translateZ(25px);
-  }
-  span a:hover{
-	transform: translateZ(-25px) rotateX(-90deg);
-  }
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, #51a2ff, #b97fe0);
+	z-index: -1;
+	border-radius: 0.15rem;
+	border: solid 0.1px white;
+	transition: all 0.3s ease-in-out;
+}
+
+a.style::after {
+	border: 0.1;
+	/* box-shadow: 0px 0px 0px 2px white; */
+	top: 0.3rem;
+	left: 0.3rem;
+}
+a.style:hover::after {
+	top: -0.3rem;
+	left: -0.3rem;
+	width: calc(100% + 0.3rem * 2);
+	height: calc(100% + 0.3rem * 2);
+}
+
+/* div.section {
+	padding: 100px 10px;
+}
+div.section:nth-child(odd) {
+	background: #fefefe;
+}
+div.section:nth-child(even) {
+	background: #eee;
+} */
+
+
+/* .flip a {
+	line-height: 44px;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+}
+.flip a span {
+	position: relative;
+	display: inline-block;
+	padding: 0 14px;
+	background: tomato;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.flip a span:before {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: #e02200;
+	content: attr(data-hover);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+}
+.flip a:hover, .flip a:focus {
+	outline: none;
+}
+.flip a:hover span, .flip a:focus span {
+	-webkit-transform: rotateX(90deg) translateY(-22px);
+	-moz-transform: rotateX(90deg) translateY(-22px);
+	transform: rotateX(90deg) translateY(-22px);
+}
+.flip a:hover span:before, .flip a:focus span:before {
+	background: #e02200;
+} */
+
+
 
 
 form {
