@@ -11,38 +11,18 @@
 
 <body>
     <table>
-        <tr>
-            <td>
-				<div>
-					<p>
-						EmailID:
-						<input data-bind='value: EmailID' />
-						
-					</p>
-						
-					<p>
-						FirstName:
-						<input data-bind='value: FirstName' />
-					</p>
-					<p>
-						LastName:
-						<input data-bind='value: LastName' />
-					</p>
-				</div>
-						
-				<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
-					
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<div>
-					<button class="style" value="SaveCustomerDetails" data-bind="click: $root.SaveCustomerDetails" > Save the Data </button>
-					<a class="style" href="getIndex.html"><span data-hover="Get Employee Information">Get Employee Information</span></a>
+		<h1>Add New Employee Information</h1>
 
-				</div>
-			</td>
-		</tr>
+		<input type="email" placeholder="Email" id="txtSearchKey" data-bind='value: EmailID'/>
+		<input type="firstName" placeholder="First Name" id="txtSearchKey" data-bind='value: FirstName'/>
+		<input type="lastName" placeholder="Last Name" id="txtSearchKey" data-bind='value: LastName'/>
+
+		<div class='parent'>
+			<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
+			<button class="style" value="SaveCustomerDetails" data-bind="click: $root.SaveCustomerDetails">Add New Customer</button>
+			<a class="style" href="getIndex.html"><span data-hover="Get Employee Information">Get Employee Information</span></a>
+		</div>
+
 					
 	</table>
 				
