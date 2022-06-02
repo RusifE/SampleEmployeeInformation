@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<script src="jquery-3.1.1.min.js"></script>
 		<script src="knockout-3.4.2.js"></script>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
 		<script type="text/javascript">
 					
 			$(document).ready(function() {
@@ -60,15 +61,14 @@
 			<input data-bind='value: FirstName' />
 			<input data-bind='value: LastName' />
 		</div>
-		<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
 		
 		<div>
-			<button data-bind="click: $root.SaveCustomerDetails" > Save </button>
-			<a href="getindex.html"> <input type="submit" value="Get Employee Information"></a>
+			<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
+			<button class="style" data-bind="click: $root.SaveCustomerDetails" > Save </button>
+			<a class="style" href="getindex.html"> <input type="submit" value="Get Employee Information"></a>
 		</div>
 
 					
 	</table>
-				
 </body>
 </html>
