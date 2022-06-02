@@ -53,14 +53,18 @@
 	</head>
 
 <body>
+	<div class="container" id="container">
+         <!-- Get Employee Information -->
+		 <form action="#">
+			<h1>Add New Employee</h1>
+
+	</div>
     <table>
 		<h1>Add New Employee Information</h1>
-
-		<div>
-			<input data-bind='value: EmailID' />
-			<input data-bind='value: FirstName' />
-			<input data-bind='value: LastName' />
-		</div>
+		
+		<input placeholder="Email" data-bind='value: EmailID' />
+		<input placeholder="First Name" data-bind='value: FirstName' />
+		<input placeholder="Last Name" data-bind='value: LastName' />
 		
 		<div>
 			<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
