@@ -5,38 +5,9 @@
     <meta charset="utf-8" />
     <script src="jquery-3.1.1.min.js"></script>
     <script src="knockout-3.4.2.js"></script>
-    <link rel="stylesheet" type="text/css" href="index.css"/>
-	<script type="text/javascript">
-        
-        $(document).ready(function() { 
-            var customerViewModel = function() {
-                var self = this;
-
-                self.firstName = ko.observable("");
-                self.lastName = ko.observable("");
-                self.emailId = ko.observable("");
-                self.searchKey = ko.observable("");
-
-                self.getCustomerDetails = function () {      
-                    $.ajax({
-                        crossDomain: true,
-                        url: 'https://c7m17o0qpj.execute-api.us-west-2.amazonaws.com/Dev/getcustomerdetailsbyemail',
-                        cache: false,
-                        type: 'GET',                   
-                        data: { "EmailID": self.searchKey() },
-                        success: function (data) {              
-                            self.firstName(data.Item.FirstName)
-                            self.lastName(data.Item.LastName),
-                            self.emailId(data.Item.EmailID)
-                        }
-                    });
-                }
-            }
-            var viewModel = new customerViewModel();
-            ko.applyBindings(viewModel);
-         });
-        
-         $(document).ready(function() {
+    <script type="text/javascript">
+        		
+        $(document).ready(function() {
             var customerDetailsViewModel = function() {
             var self = this;
 
@@ -75,26 +46,45 @@
             var viewModel = new customerDetailsViewModel();
             ko.applyBindings(viewModel);
          });
+
        
     </script>
 </head>
-
 <body>
     <table>
-		<h1>Add New Employee Information</h1>
-
-		<input type="email" placeholder="Email" data-bind='value: EmailID'/>
-		<input type="firstName" placeholder="First Name" data-bind='value: FirstName'/>
-		<input type="lastName" placeholder="Last Name" data-bind='value: LastName'/>
-
-		<div>
-			<span style ="color: darkolivegreen" data-bind='text : SuccessMessage'>
-			<button class="style" value="SaveCustomerDetails"  data-bind="click: $root.SaveCustomerDetails()" >Add New Customer</button>
-			<a class="style" href="getIndex.html"><span data-hover="Get Employee Information">Get Employee Information</span></a>
-		</div>
-
+        <tr>
+            <td>
+				<div>
+					<p>
+						EmailID:
+						<input data-bind='value: EmailID' />
+						
+					</p>
+						
+					<p>
+						FirstName:
+						<input data-bind='value: FirstName' />
+					</p>
+					<p>
+						LastName:
+						<input data-bind='value: LastName' />
+					</p>
+				</div>
+						
+				<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
+					
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div>
+					<button data-bind="click: $root.SaveCustomerDetails" > Save </button>
+					<td><a href="getindex.html"> <input type="submit" value="Get Employee Information"></a></td>
+				</div>
+			</td>
+		</tr>
 					
 	</table>
 				
-</body>
+	</body>
 </html>
