@@ -7,15 +7,59 @@
     <script src="knockout-3.4.2.js"></script>
     <link rel="stylesheet" type="text/css" href="index.css"/>
     <script type="text/javascript" src=index.js></script>
+	<script type="text/javascript">
+        		
+        $(document).ready(function() {
+            var customerDetailsViewModel = function() {
+            var self = this;
+
+			self.EmailID = ko.observable("");
+            self.FirstName = ko.observable("");
+            self.LastName = ko.observable("");
+            self.SuccessMessage = ko.observable("");
+			
+            self.SaveCustomerDetails = function () {     
+				var CustomerDetail = {
+					EmailID: self.EmailID(),
+					FirstName: self.FirstName(),
+					LastName: self.LastName()
+				}
+				
+				$.ajax({
+					crossDomain: true,
+                    url: 'https://w5fr5lidcd.execute-api.us-west-2.amazonaws.com/dev/postcustomerdetails',
+                    cache: false,
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8', 
+                    data: ko.toJSON(CustomerDetail),
+                    success: function (data) {              
+                        self.SuccessMessage(data)
+							self.EmailID('');
+							self.FirstName('');
+							self.LastName('');
+                    }
+					}).fail(
+					    function(xhr, textStatus, err){
+					        alert("Error happened "+err);
+                        });
+            };
+            }
+
+            var viewModel = new customerDetailsViewModel();
+            ko.applyBindings(viewModel);
+         });
+
+       
+    </script>
 </head>
 
 <body>
     <table>
 		<h1>Add New Employee Information</h1>
 
-		<input type="email" placeholder="Email" id="txtSearchKey" data-bind='value: EmailID'/>
-		<input type="firstName" placeholder="First Name" id="txtSearchKey" data-bind='value: FirstName'/>
-		<input type="lastName" placeholder="Last Name" id="txtSearchKey" data-bind='value: LastName'/>
+		<input type="email" placeholder="Email" data-bind='value: EmailID'/>
+		<input type="firstName" placeholder="First Name" data-bind='value: FirstName'/>
+		<input type="lastName" placeholder="Last Name" data-bind='value: LastName'/>
 
 		<div>
 			<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
