@@ -56,23 +56,18 @@
 	<div class="container" id="container">
          <!-- Get Employee Information -->
 		 <form action="#">
-			<h1>Add New Employee</h1>
-
-	</div>
-    <table>
 		<h1>Add New Employee Information</h1>
 		
-		<input placeholder="Email" data-bind='value: EmailID' />
+		<input class="input_margin" placeholder="Email" data-bind='value: EmailID' />
 		<input placeholder="First Name" data-bind='value: FirstName' />
 		<input placeholder="Last Name" data-bind='value: LastName' />
 		
 		<div>
-			<span style ="color: darkolivegreen" data-bind='text : SuccessMessage' />
-			<button class="style" data-bind="click: $root.SaveCustomerDetails" > Save </button>
-			<a class="style" href="getindex.html"> <input type="submit" value="Get Employee Information"></a>
+			<button class="style" data-bind="click: $root.SaveCustomerDetails" data-hover="Save Information"> Save Employee Info </button>
+			<a class="style" href="getindex.html" data-hover=" Get Employee Information"> Get Employee Info</a>
 		</div>
-
+	</div>
 					
-	</table>
+	
 </body>
 </html>
