@@ -58,13 +58,13 @@
 		 <form action="#">
 		<h1>Add New Employee Information</h1>
 		
-		<input class="input_margin" placeholder="Email" data-bind='value: EmailID' />
-		<input placeholder="First Name" data-bind='value: FirstName' />
-		<input placeholder="Last Name" data-bind='value: LastName' />
+		<input class="input_margin" id="emailInput" placeholder="Email" data-bind='value: EmailID' />
+		<input placeholder="First Name" id="firstNameInput" data-bind='value: FirstName' />
+		<input placeholder="Last Name" id="lastNameInput" data-bind='value: LastName' />
 		
 		<div>
-			<button class="style" data-bind="click: $root.SaveCustomerDetails" data-hover="Save Information"> Save Employee Info </button>
-			<a class="style" href="getindex.html" data-hover=" Get Employee Information"> Get Employee Info</a>
+			<button class="style" id="saveNewEmployeeInfo" data-bind="click: $root.SaveCustomerDetails" data-hover="Save Information"> Save Employee Info </button>
+			<a class="style"  id="getEmployeerDetailsButton" href="getindex.html" data-hover=" Get Employee Information"> Get Employee Info</a>
 		</div>
 	</div>
 					
